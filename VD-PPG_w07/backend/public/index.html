@@ -1,82 +1,70 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Linear Regression (DataTab-style)</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Analizador de Regresión - AEC1</title>
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <h1>Linear Regression Tool</h1>
-    <p class="subtitle">Upload CSV or fetch from an API • View table • Run regression • Plot results</p>
-  </header>
 
-  <main class="container">
-    <section class="card">
-      <h2>1) Load Data</h2>
+    <div class="container">
+        <h1>Análisis de Regresión Lineal</h1>
+        
+        <div class="dashboard">
+            <aside class="sidebar">
+                
+                <section class="card">
+                    <h2>1. Carga de Datos</h2>
+                    <label>Archivo Local:</label>
+                    <input type="file" id="archivoCsv" accept=".csv">
+                    
+                    <div style="text-align: center; color: #999; margin: 10px 0; font-size: 12px;">— O TAMBIÉN —</div>
+                    
+                    <label>URL de API:</label>
+                    <input type="text" id="inputUrlApi" placeholder="https://api.ejemplo.com/datos">
+                    <button id="btnCargarApi">Consultar API</button>
+                </section>
 
-      <div class="row">
-        <div class="block">
-          <label class="label">CSV Upload</label>
-          <input id="csvFile" type="file" accept=".csv" />
-          <button id="btnUploadCsv">Upload CSV</button>
+                <section class="card">
+                    <h2>2. Configuración</h2>
+                    <label>Variable X (Independiente):</label>
+                    <select id="selectX"></select>
+                    
+                    <label>Variable Y (Dependiente):</label>
+                    <select id="selectY"></select>
+                    
+                    <button id="btnCalcular">Ejecutar Análisis</button>
+                </section>
+                
+            </aside>
+
+            <main class="main-content">
+                
+                <section class="card">
+                    <h2>Gráfico de Dispersión</h2>
+                    <div id="graficoRegresion">
+                        <p style="color: #999; text-align: center; padding: 40px;">Carga datos para ver el gráfico</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>Resumen Estadístico</h2>
+                    <div id="resultadoTexto">
+                        <p style="color: #999;">Los coeficientes aparecerán tras el cálculo.</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>Vista Previa de la Tabla</h2>
+                    <div id="contenedorTabla" style="overflow-x: auto;">
+                        </div>
+                </section>
+
+            </main>
         </div>
+    </div>
 
-        <div class="block">
-          <label class="label">API URL</label>
-          <input id="apiUrl" type="text" placeholder="https://example.com/data.json" />
-          <button id="btnLoadApi">Load API</button>
-        </div>
-      </div>
-
-      <div id="status" class="status"></div>
-    </section>
-
-    <section class="card">
-      <h2>2) Data Table (read-only)</h2>
-      <div id="tableWrap" class="table-wrap"></div>
-    </section>
-
-    <section class="card">
-      <h2>3) Linear Regression</h2>
-
-      <div class="row">
-        <div class="block">
-          <label class="label">X variable</label>
-          <select id="xCol"></select>
-        </div>
-        <div class="block">
-          <label class="label">Y variable</label>
-          <select id="yCol"></select>
-        </div>
-        <div class="block">
-          <label class="label">&nbsp;</label>
-          <button id="btnRun">Run Regression</button>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="block grow">
-          <h3>Regression Output</h3>
-          <div id="regWrap"></div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="block grow">
-          <h3>Plot</h3>
-          <div id="plot" class="plot"></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <small>VD - AEC1_w07 • Node/Express + Vanilla JS + Plotly</small>
-  </footer>
-
-  <script src="./app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
