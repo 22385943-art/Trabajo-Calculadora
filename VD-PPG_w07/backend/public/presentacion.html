@@ -2,126 +2,141 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Presentación Proyecto AEC1 - Ingeniería Inversa</title>
+    <title>Presentación Proyecto AEC1 - Análisis de Datos</title>
     <style>
-        :root {
-            --primary: #1a73e8;
-            --bg: #f0f2f5;
-            --text: #333;
-        }
+        :root { --primary: #1a73e8; --bg: #f0f2f5; --text: #333; }
         body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; overflow: hidden; }
-        
-        .slide-container { width: 100vw; height: 100vh; display: flex; transition: transform 0.6s ease-in-out; }
-        
-        .slide { 
-            min-width: 100vw; height: 100vh; display: flex; flex-direction: column; 
-            justify-content: center; align-items: center; padding: 40px; box-sizing: border-box; 
-            text-align: center;
-        }
-
-        .card-pres {
-            background: white; padding: 3rem; border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); max-width: 900px; width: 100%;
-        }
-
-        h1 { color: var(--primary); font-size: 2.5rem; margin-bottom: 1rem; }
-        h2 { color: #555; margin-bottom: 1.5rem; }
-        p, li { font-size: 1.2rem; line-height: 1.6; color: #666; text-align: left; }
-        ul { display: inline-block; margin-top: 1rem; }
-
-        .controls { position: fixed; bottom: 30px; right: 50px; display: flex; gap: 20px; }
-        button { 
-            padding: 15px 25px; border: none; border-radius: 50px; 
-            background: var(--primary); color: white; cursor: pointer; font-weight: bold;
-            box-shadow: 0 4px 10px rgba(26,115,232,0.3);
-        }
-        button:disabled { background: #ccc; cursor: not-allowed; }
-        
-        .step-tag { background: #e8f0fe; color: var(--primary); padding: 5px 15px; border-radius: 20px; font-weight: bold; margin-bottom: 10px; display: inline-block; }
+        .slide-container { width: 100vw; height: 100vh; display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .slide { min-width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 60px; box-sizing: border-box; }
+        .card-pres { background: white; padding: 4rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); max-width: 1000px; width: 100%; position: relative; }
+        h1 { color: var(--primary); font-size: 2.8rem; margin-bottom: 0.5rem; text-align: left; }
+        h2 { color: #555; margin-bottom: 2rem; font-size: 1.4rem; text-align: left; border-left: 4px solid var(--primary); padding-left: 15px; }
+        p, li { font-size: 1.15rem; line-height: 1.7; color: #444; text-align: left; margin-bottom: 10px; }
+        ul { margin-top: 1rem; padding-left: 20px; }
+        .controls { position: fixed; bottom: 40px; right: 60px; display: flex; gap: 15px; }
+        button { padding: 12px 30px; border: none; border-radius: 8px; background: var(--primary); color: white; cursor: pointer; font-weight: bold; font-size: 1rem; transition: 0.3s; }
+        button:hover { background: #1557b0; box-shadow: 0 5px 15px rgba(26,115,232,0.4); }
+        button:disabled { background: #ccc; cursor: not-allowed; box-shadow: none; }
+        .step-tag { background: #e8f0fe; color: var(--primary); padding: 6px 18px; border-radius: 30px; font-weight: bold; margin-bottom: 15px; display: inline-block; text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
     <div class="slide-container" id="container">
         <section class="slide">
-            <div class="card-pres">
-                <span class="step-tag">PROYECTO AEC1</span>
-                <h1>Analizador de Regresión Lineal</h1>
-                <h2>Herramienta de Ingeniería para el Análisis de Datos</h2>
-                <p style="text-align: center;">Desarrollo Full-Stack: Node.js + Vanilla JS</p>
-                <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #999;">Usa los botones para navegar</p>
+            <div class="card-pres" style="text-align: center;">
+                <span class="step-tag">Presentación</span>
+                <h1 style="text-align: center;">Calculadora Estadística</h1>
+                <h2 style="border:none; text-align: center; padding:0;">Frontend y Backend unidos para mostrar los calculos de forma visual</h2>
+                <div style="margin-top: 3rem; color: #888;">
+                    <p style="text-align: center;"></p>
+                </div>
             </div>
         </section>
 
         <section class="slide">
             <div class="card-pres">
-                <span class="step-tag">01. ARQUITECTURA</span>
-                <h1>Estructura del Sistema</h1>
-                <p>El proyecto se divide en tres capas fundamentales siguiendo el principio de separación de responsabilidades:</p>
+                <span class="step-tag">01. EL PROYECTO</span>
+                <h1>¿En qué consiste la aplicación?</h1>
+                <h2>Funcionalidad y Experiencia de Usuario</h2>
+                <p>La web es una <strong>herramienta de diagnóstico estadístico</strong> que permite a cualquier usuario transformar datos brutos en conocimiento visual sin necesidad de software especializado. Sus funciones principales son:</p>
                 <ul>
-                    <li><strong>Frontend:</strong> Interfaz reactiva construida con HTML5, CSS Grid y JavaScript asíncrono.</li>
-                    <li><strong>Backend:</strong> Servidor en Node.js encargado del procesamiento pesado y la lógica matemática.</li>
-                    <li><strong>API:</strong> Comunicación mediante JSON para el intercambio de datos y resultados.</li>
+                    <li><strong>Procesamiento de datos:</strong> Interfaz capaz de interpretar estructuras CSV complejas.</li>
+                    <li><strong>Análisis bajo demanda:</strong> El usuario decide qué variables comparar (Independiente vs Dependiente).</li>
+                    <li><strong>Feedback inmediato:</strong> Cálculo instantáneo de la recta de regresión y su bondad de ajuste.</li>
                 </ul>
             </div>
         </section>
 
         <section class="slide">
             <div class="card-pres">
-                <span class="step-tag">02. ADQUISICIÓN DE DATOS</span>
-                <h1>Flexibilidad de Entrada</h1>
-                <p>Implementamos dos métodos de ingesta de datos mediante Ingeniería Inversa:</p>
+                <span class="step-tag">02. ESTRUCTURA TÉCNICA</span>
+                <h1>Arquitectura Cliente-Servidor</h1>
+                <h2>Separación de Lógica y Presentación</h2>
+                <p>Para garantizar un sistema escalable y profesional, hemos separado la aplicación en dos grandes bloques comunicados por JSON:</p>
                 <ul>
-                    <li><strong>Carga Local:</strong> Procesamiento de archivos CSV mediante <code>FormData</code>.</li>
-                    <li><strong>Consumo de API Externa:</strong> El backend actúa como proxy para evitar problemas de CORS, permitiendo analizar datos de cualquier URL pública.</li>
+                    <li><strong>Backend (Node.js):</strong> Actúa como el "cerebro". No solo sirve los archivos, sino que realiza las operaciones matemáticas pesadas, protegiendo la lógica del negocio.</li>
+                    <li><strong>Frontend (Client-side):</strong> Una SPA (Single Page Application) que gestiona el estado de los datos cargados mediante <code>JavaScript</code>, permitiendo cambios dinámicos sin recargar la página.</li>
                 </ul>
             </div>
         </section>
 
         <section class="slide">
             <div class="card-pres">
-                <span class="step-tag">03. EL BACKEND</span>
-                <h1>Procesamiento y Regresión</h1>
-                <p>La lógica no reside en el cliente para garantizar eficiencia:</p>
+                <span class="step-tag">03. FLEXIBILIDAD DE ENTRADA</span>
+                <h1>Fuentes de Datos</h1>
+                <h2>Dataset Local vs. API Remota</h2>
+                <p>La aplicación ha sido diseñada para ser versátil, permitiendo al analista trabajar con información proveniente de dos entornos distintos:</p>
                 <ul>
-                    <li>Cálculo de <strong>Pendiente (β1)</strong> e <strong>Intercepto (β0)</strong>.</li>
-                    <li>Obtención del <strong>Coeficiente de Determinación (R²)</strong> para medir la fiabilidad del modelo.</li>
-                    <li>Cálculo del <strong>Error Estándar</strong> del análisis.</li>
+                    <li><strong>Carga de Dataset (CSV):</strong> Permite el procesamiento de archivos locales almacenados en el equipo del usuario. El sistema interpreta la estructura de filas y columnas de forma automática tras la subida.</li>
+                    <li><strong>Conexión a API (JSON):</strong> Facilita la importación de datos en tiempo real desde servidores externos. El usuario solo necesita proporcionar la URL del endpoint para que la aplicación consuma y formatee los datos.</li>
+                </ul>
+                <p style="margin-top: 20px; font-style: italic; font-size: 1rem;">Ambos métodos convergen en un mismo formato interno, garantizando que el análisis de regresión sea idéntico sin importar el origen de la información.</p>
+            </div>
+        </section>
+
+        <section class="slide">
+            <div class="card-pres">
+                <span class="step-tag">04. MOTOR MATEMÁTICO</span>
+                <h1>Métricas de Regresión</h1>
+                <h2>Fórmulas y Análisis de Precisión</h2>
+                
+                <p>El backend procesa los datos para devolver tres indicadores fundamentales que definen el modelo:</p>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 30px;">
+                    
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border: 1px solid #e0e0e0;">
+                        <p style="font-weight: bold; color: #1a73e8; margin-bottom: 15px;">Ecuación de la Recta</p>
+                        <p style="font-size: 1.5rem; font-family: 'Times New Roman', serif;">
+                            Y = β<sub>0</sub> + β<sub>1</sub>X
+                        </p>
+                        <p style="font-size: 0.85rem; color: #777; margin-top: 10px;">Define la relación lineal entre las variables.</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border: 1px solid #e0e0e0;">
+                        <p style="font-weight: bold; color: #1a73e8; margin-bottom: 15px;">Bondad de Ajuste</p>
+                        <p style="font-size: 1.5rem; font-family: 'Times New Roman', serif;">
+                            R<sup>2</sup>
+                        </p>
+                        <p style="font-size: 0.85rem; color: #777; margin-top: 10px;">Indica el porcentaje de varianza explicada por el modelo.</p>
+                    </div>
+
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; border: 1px solid #e0e0e0;">
+                        <p style="font-weight: bold; color: #1a73e8; margin-bottom: 15px;">Precisión</p>
+                        <p style="font-size: 1.5rem; font-family: 'Times New Roman', serif;">
+                            σ<sub>est</sub>
+                        </p>
+                        <p style="font-size: 0.85rem; color: #777; margin-top: 10px;">Mide la dispersión de los datos respecto a la recta.</p>
+                    </div>
+
+                </div>
+
+                <ul style="margin-top: 30px;">
+                    <li><strong>β<sub>1</sub> (Pendiente):</strong> Representa el cambio en Y por cada unidad de X.</li>
+                    <li><strong>β<sub>0</sub> (Intercepto):</strong> El valor de Y cuando X es igual a cero.</li>
+                    <li><strong>Fiabilidad:</strong> Un R<sup>2</sup> cercano a 1 indica una predicción altamente confiable.</li>
                 </ul>
             </div>
         </section>
 
         <section class="slide">
             <div class="card-pres">
-                <span class="step-tag">04. VISUALIZACIÓN</span>
-                <h1>Interfaz Plotly.js</h1>
-                <p>Transformación de números en información visual accionable:</p>
+                <span class="step-tag">05. RESULTADO VISUAL</span>
+                <h1>Gráficos con Plotly.js</h1>
+                <h2>Interactividad y Análisis Visual</h2>
+                <p>La visualización es el último paso de la ingeniería inversa aplicada al proyecto:</p>
                 <ul>
-                    <li>Gráfico de dispersión (Scatter Plot) con los datos reales.</li>
-                    <li>Superposición de la <strong>Línea de Mejor Ajuste</strong> calculada.</li>
-                    <li>Interfaz interactiva que permite explorar los puntos de datos.</li>
+                    <li><strong>Renderizado Reactivo:</strong> El gráfico se limpia (<code>purge</code>) y se redibuja automáticamente al cambiar las variables X o Y.</li>
+                    <li><strong>Dualidad de Datos:</strong> Se muestran simultáneamente los puntos reales (Scatter) y la tendencia teórica (Línea de regresión).</li>
+                    <li><strong>Diseño Responsivo:</strong> El motor visual se ajusta dinámicamente al tamaño de la pantalla del dispositivo.</li>
                 </ul>
-            </div>
-        </section>
-
-        <section class="slide">
-            <div class="card-pres">
-                <span class="step-tag">05. CONCLUSIÓN</span>
-                <h1>Ingeniería de Software Aplicada</h1>
-                <p>Este proyecto demuestra la capacidad de integrar:</p>
-                <ul>
-                    <li>Manejo de estados en el cliente (State Management).</li>
-                    <li>Diseño responsivo y profesional (UX/UI).</li>
-                    <li>Consumo y transformación de datos en tiempo real.</li>
-                </ul>
-                <h3 style="margin-top: 2rem; color: var(--primary);">¡Proyecto Finalizado!</h3>
             </div>
         </section>
     </div>
 
     <div class="controls">
-        <button id="prevBtn" disabled>Anterior</button>
-        <button id="nextBtn">Siguiente</button>
+        <button id="prevBtn" disabled>← Anterior</button>
+        <button id="nextBtn">Siguiente →</button>
     </div>
 
     <script>
@@ -129,7 +144,7 @@
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         let currentSlide = 0;
-        const totalSlides = 6; // Portada + 5 slides
+        const totalSlides = 6;
 
         function updateSlide() {
             container.style.transform = `translateX(-${currentSlide * 100}vw)`;
@@ -137,18 +152,13 @@
             nextBtn.disabled = currentSlide === totalSlides - 1;
         }
 
-        nextBtn.addEventListener('click', () => {
-            if (currentSlide < totalSlides - 1) {
-                currentSlide++;
-                updateSlide();
-            }
-        });
-
-        prevBtn.addEventListener('click', () => {
-            if (currentSlide > 0) {
-                currentSlide--;
-                updateSlide();
-            }
+        nextBtn.addEventListener('click', () => { if (currentSlide < totalSlides - 1) { currentSlide++; updateSlide(); } });
+        prevBtn.addEventListener('click', () => { if (currentSlide > 0) { currentSlide--; updateSlide(); } });
+        
+        // Navegación con flechas del teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "ArrowRight") nextBtn.click();
+            if (e.key === "ArrowLeft") prevBtn.click();
         });
     </script>
 </body>
