@@ -121,6 +121,7 @@ function dibujarTabla(columnas, filas) {
 }
 
 function dibujarGrafico(xCol, yCol, resultado) {
+    Plotly.purge('graficoRegresion');
     const xi = state.columns.indexOf(xCol);
     const yi = state.columns.indexOf(yCol);
 
