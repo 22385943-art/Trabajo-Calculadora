@@ -4,6 +4,8 @@ let state = {
     rows: []
 };
 
+const API_BASE = "https://trabajo-calculadora-m2b2.vercel.app/api";
+
 // Capturamos elementos
 const inputArchivo = document.getElementById('archivoCsv');
 const visor = document.getElementById('contenedorTabla');
