@@ -71,39 +71,51 @@ select:focus {
     box-shadow: 0 0 5px rgba(26, 115, 232, 0.2);
 }
 
-/* Botón General */
 button {
     padding: 12px 20px;
     border: none;
     border-radius: 6px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.1s ease;
     font-size: 14px;
-}
-
-/* Botón para Cargar (Gris/Azul suave) */
-#btnCargarApi {
-    background-color: #f1f3f4;
-    color: #3c4043;
-    border: 1px solid #dadce0;
-}
-
-#btnCargarApi:hover {
-    background-color: #e8eaed;
-}
-
-/* Botón de Calcular (Azul Llamativo) */
-#btnCalcular {
+    
+    /* Consistencia de color por defecto (Azul) */
     background-color: #1a73e8;
     color: white;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+
+    /* Añadimos box-shadow a la transición */
+    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease;
 }
 
-#btnCalcular:hover {
+/* Efecto Hover General (Oscurecer un poco) */
+button:hover {
     background-color: #1557b0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
+
+/* NUEVO: Efecto al Pulsar (Click) */
+button:active {
+    /* Escala ligeramente hacia abajo (aplastado) */
+    transform: scale(0.97);
+    /* Reduce la sombra para parecer que toca el fondo */
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+/* Selectores específicos simplificados.
+   Ahora solo se usan para márgenes o layout si es necesario, 
+   no para colores.
+*/
+#btnCargarApi {
+    /* Mantiene el estilo general azul definido arriba */
+    /* borramos margin-top específico si lo tuviera en HTML, 
+       o lo definimos aquí si es necesario */
+}
+
+#btnCalcular {
+    /* Mantiene el estilo general azul definido arriba */
+}
+
 /* Forzamos al contenedor a tener siempre el mismo tamaño */
 #graficoRegresion {
     width: 100%;
